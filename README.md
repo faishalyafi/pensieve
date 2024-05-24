@@ -29,11 +29,16 @@ Before you begin, ensure you have met the following requirements:
     npm run dbsync
     ```
 
-5. **To start the application, use the following command**: 
+5. **Run Database Seed**: To create data in the PostgreSQL database, hit seed_data end point with GET method:
+    ``` bash
+    {{BASE_URL}}/gps/seed_data
+    ```
+
+6. **To start the application, use the following command**: 
     ``` bash
     npm run start
     ```
 
-6. By using port 8000, users will be able to access the application via http://localhost:8000. If you have a preference for another port, simply change that port in ENV.
+7. By using port 8000, users will be able to access the application via http://localhost:8000. If you have a preference for another port, simply change that port in ENV.
 
 

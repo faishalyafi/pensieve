@@ -95,6 +95,34 @@ class Controller {
             res.status(500).json({ status: 500, message: "error", data: error })
         }
     }
+
+    static async seed_data(req, res) {
+        try {
+            let data = await sq.query(`INSERT INTO gps (device_id, device_type, timestamp, location,"createdAt","updatedAt")
+            VALUES ('D-1567', 'Aircraft', '2022-08-31 10:05:00', 'L1',now(),now()),
+            ('D-1567', 'Aircraft', '2022-08-31 10:10:00', 'L1',now(),now()),
+            ('D-1567', 'Aircraft', '2022-08-31 10:15:00', 'L1',now(),now()),
+            ('D-1567', 'Aircraft', '2022-08-31 10:20:00', 'L1',now(),now()),
+            ('D-1567', 'Aircraft', '2022-08-31 10:25:00', 'L2',now(),now()),
+            ('D-1568', 'Personal', '2022-08-31 10:05:00', 'L3',now(),now()),
+            ('D-1568', 'Personal', '2022-08-31 10:10:00', 'L3',now(),now()),
+            ('D-1568', 'Personal', '2022-08-31 10:15:00', 'L3',now(),now()),
+            ('D-1568', 'Personal', '2022-08-31 10:20:00', 'L3',now(),now()),
+            ('D-1568', 'Personal', '2022-08-31 10:25:00', 'L3',now(),now()),
+            ('D-1569', 'Asset', '2022-08-31 10:15:00', 'L4',now(),now()),
+            ('D-1569', 'Asset', '2022-08-31 10:20:00', 'L4',now(),now()),
+            ('D-1569', 'Asset', '2022-08-31 10:25:00', 'L1',now(),now()),
+            ('D-1569', 'Asset', '2022-08-31 10:30:00', 'L1',now(),now()),
+            ('D-1569', 'Asset', '2022-08-31 10:35:00', 'L2',now(),now()),
+            ('D-1570', 'Personal', '2022-08-31 10:35:00', 'L5',now(),now()),
+            ('D-1571', 'Asset', '2022-08-31 10:35:00', 'L6',now(),now()) returning *`)
+
+            res.status(200).json({ status: 200, message: "success", data: data })
+        } catch (error) {
+            console.log(error)
+            res.status(500).json({ status: 500, message: "error", data: error })
+        }
+    }
 }
 
 export default Controller;

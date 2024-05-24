@@ -8,5 +8,6 @@ router.patch('/update', authentification, Controller.update);
 router.delete('/delete', authentification, Controller.delete);
 router.post('/list', authentification, Controller.list);
 router.get('/details_by_id/:id', authentification, Controller.details_by_id);
+router.get('/seed_data', Controller.seed_data);
 
 export default router
