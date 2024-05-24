@@ -20,7 +20,7 @@ Before you begin, ensure you have met the following requirements:
     ``` bash
     DB_HOST= your_database_host
     DB_USER= your_database_username
-    DB_PASSWORD= your_database_password
+    DB_PASS= your_database_password
     DB_NAME= your_database_name
     ```
 
@@ -28,12 +28,12 @@ Before you begin, ensure you have met the following requirements:
     ``` bash
     npm run dbsync
     ```
-    
+
 5. **To start the application, use the following command**: 
     ``` bash
     npm run start
     ```
 
-6. By using port 8000, users will be able to access the application via http://localhost:8000. If you have a preference for another port, simply change that port.
+6. By using port 8000, users will be able to access the application via http://localhost:8000. If you have a preference for another port, simply change that port in ENV.
 
 
